@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Icebox.Core
+namespace Icebox.Common
 {
     public interface IServiceHandler
     {

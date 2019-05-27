@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using Microsoft.Isam.Esent.Collections.Generic;
 
+using Icebox.Domain;
 using Icebox.Domain.Entities;
 
-namespace Icebox.Core.LoadDistributors
+namespace Icebox.Lb.Distributors
 {
     public class RoundRobinDistribution : ILoadDistributor
     {        

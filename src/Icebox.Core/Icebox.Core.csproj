@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18CB3D9E-2DA5-44D2-9E04-F439BC4A07C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Icebox.Core</RootNamespace>
+    <AssemblyName>Icebox.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Esent.Collections">
+      <HintPath>..\Icebox\bin\Debug\Esent.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\Icebox\bin\Debug\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Isam">
+      <HintPath>..\Icebox\bin\Debug\Esent.Isam.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IceboxServiceHandler.cs" />
+    <Compile Include="LoadBalancing\LoadBalancer.cs" />
+    <Compile Include="LoadBalancing\LoadBalancingExtensions.cs" />
+    <Compile Include="LoadBalancing\LoadDistributors\RoundRobinDistribution.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
+      <Project>{1176cece-0727-4e84-a858-2cf82c4df5a5}</Project>
+      <Name>Icebox.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icebox.Infrastructure\Icebox.Infrastructure.csproj">
+      <Project>{2b8b5a27-47a2-4d4b-8b90-fde540967b12}</Project>
+      <Name>Icebox.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icebox.Repo\Icebox.Persistance.csproj">
+      <Project>{e8fae233-99ee-43c8-8bbf-ddbce0a952bf}</Project>
+      <Name>Icebox.Persistance</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

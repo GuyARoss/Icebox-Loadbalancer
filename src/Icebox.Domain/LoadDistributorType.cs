@@ -1,4 +1,4 @@
-﻿namespace Icebox.Domain
+﻿namespace Icebox.Common
 {
     public enum LoadDistributorType : int
     {

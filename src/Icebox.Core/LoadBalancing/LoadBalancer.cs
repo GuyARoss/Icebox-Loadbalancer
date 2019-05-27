@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Isam.Esent.Collections.Generic;
 
-using Icebox.Domain.Entities;
+using Icebox.Common;
+using Icebox.Common.Entities;
 
-namespace Icebox.Core
+namespace Icebox.Core.LoadBalancing
 {
     public class LoadBalancer
     {
@@ -23,6 +24,6 @@ namespace Icebox.Core
         public string SelectFromPool()
         {            
             return Distributor.Invoke(NodePool, _persistedDictionary);
-        }
+        }        
     }
 }

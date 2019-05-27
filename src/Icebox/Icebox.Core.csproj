@@ -87,17 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IceboxService.cs" />
     <Compile Include="HttpProxy.cs" />
-    <Compile Include="ILoadDistributer.cs" />
-    <Compile Include="IServiceHandler.cs" />
-    <Compile Include="LoadBalancer.cs" />
-    <Compile Include="LoadDistributors\RoundRobinDistribution.cs" />
-    <Compile Include="Persistance\ClusterRepository.cs" />
-    <Compile Include="Persistance\Extensions\CluserExtensions.cs" />
-    <Compile Include="Persistance\Extensions\ServerNodeExtensions.cs" />
-    <Compile Include="Persistance\IRepository.cs" />
-    <Compile Include="Persistance\ServerNodeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-using Icebox.Domain.Entities;
-using IceBox.Web.Services;
+using Icebox.Common.Entities;
+using Icebox.Services;
 
-namespace IceBox.Web.Controllers
+namespace Icebox.Web.Controllers
 {
     [Route("clusters")]
     [ApiController]

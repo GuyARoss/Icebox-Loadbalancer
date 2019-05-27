@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1176CECE-0727-4E84-A858-2CF82C4DF5A5}</ProjectGuid>
+    <ProjectGuid>{A2375EB5-7E28-46BF-9254-DFF42E6FB16A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Icebox.Domain</RootNamespace>
-    <AssemblyName>Icebox.Domain</AssemblyName>
+    <RootNamespace>Icebox.Lb</RootNamespace>
+    <AssemblyName>Icebox.Lb</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Esent.Collections">
+      <HintPath>..\Testing\bin\Debug\Esent.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop">
+      <HintPath>..\Testing\bin\Debug\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Isam">
+      <HintPath>..\Testing\bin\Debug\Esent.Isam.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,11 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\ClusterModel.cs" />
-    <Compile Include="Entities\ServerNode.cs" />
-    <Compile Include="IoCExtensions.cs" />
-    <Compile Include="LoadDistributorType.cs" />
+    <Compile Include="LoadBalancer.cs" />
+    <Compile Include="LoadDistributors\RoundRobinDistribution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
+      <Project>{1176cece-0727-4e84-a858-2cf82c4df5a5}</Project>
+      <Name>Icebox.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

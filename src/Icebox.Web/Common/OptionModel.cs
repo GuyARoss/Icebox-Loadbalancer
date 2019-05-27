@@ -1,4 +1,4 @@
-﻿namespace IceBox.Web.Entities
+﻿namespace Icebox.Web.Common
 {
     public class OptionModel<T>
     {

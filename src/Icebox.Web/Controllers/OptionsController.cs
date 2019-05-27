@@ -2,10 +2,10 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
-using IceBox.Web.Services;
-using IceBox.Web.Entities;
+using Icebox.Services;
+using Icebox.Web.Common;
 
-namespace IceBox.Web.Controllers
+namespace Icebox.Web.Controllers
 {
     [Route("options")]
     [ApiController]

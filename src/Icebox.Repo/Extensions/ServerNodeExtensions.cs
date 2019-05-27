@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Icebox.Domain.Entities;
+using Icebox.Common.Entities;
 
-namespace Icebox.Core.Persistance.Extensions
+namespace Icebox.Persistance.Extensions
 {
     public static class ServerNodeExtensions
     {

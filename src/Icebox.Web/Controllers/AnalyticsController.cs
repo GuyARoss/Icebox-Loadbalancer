@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace IceBox.Web.Controllers
+namespace Icebox.Web.Controllers
 {
     [Route("Analytics")]
     [ApiController]

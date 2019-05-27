@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Threading.Tasks;
 
-using Icebox.Domain;
-using Icebox.Domain.Entities;
+using Icebox.Common;
+using Icebox.Common.Entities;
 
 using Icebox.Infrastructure;
 
-namespace Icebox.Core.Persistance
+namespace Icebox.Persistance
 {
     public class ClusterRepository : Db<ClusterModel>, IRepository<ClusterModel>
     {

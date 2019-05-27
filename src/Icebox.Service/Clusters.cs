@@ -3,11 +3,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-using Icebox.Domain;
-using Icebox.Domain.Entities;
-using Icebox.Core.Persistance;
+using Icebox.Common;
+using Icebox.Common.Entities;
+using Icebox.Persistance;
 
-namespace IceBox.Web.Services
+namespace Icebox.Services
 {
     public static class Clusters
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Isam.Esent.Collections.Generic;
 
-using Icebox.Domain.Entities;
+using Icebox.Common.Entities;
 
-namespace Icebox.Core
+namespace Icebox.Common
 {
     public interface ILoadDistributor
     {

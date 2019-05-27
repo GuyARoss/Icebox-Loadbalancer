@@ -71,17 +71,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Icebox.Domain\Icebox.Domain.csproj">
+    <ProjectReference Include="..\Icebox.Core\Icebox.Core.csproj">
+      <Project>{18cb3d9e-2da5-44d2-9e04-f439bc4a07c1}</Project>
+      <Name>Icebox.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
       <Project>{1176cece-0727-4e84-a858-2cf82c4df5a5}</Project>
-      <Name>Icebox.Domain</Name>
+      <Name>Icebox.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Icebox.Infrastructure\Icebox.Infrastructure.csproj">
       <Project>{2B8B5A27-47A2-4D4B-8B90-FDE540967B12}</Project>
       <Name>Icebox.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Icebox\Icebox.Core.csproj">
-      <Project>{06adf707-fb6e-4856-89ab-947f0f21ee80}</Project>
-      <Name>Icebox.Core</Name>
+    <ProjectReference Include="..\Icebox.Repo\Icebox.Persistance.csproj">
+      <Project>{e8fae233-99ee-43c8-8bbf-ddbce0a952bf}</Project>
+      <Name>Icebox.Persistance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Icebox.Service\Icebox.Service.csproj">
+      <Project>{2dc44ad2-0827-4799-85a2-18fc0c9a60c8}</Project>
+      <Name>Icebox.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

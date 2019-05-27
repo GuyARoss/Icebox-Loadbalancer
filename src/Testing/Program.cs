@@ -1,7 +1,7 @@
 ﻿using System;
 
-using Icebox.Core.Persistance;
-using Icebox.Domain.Entities;
+using Icebox.Persistance;
+using Icebox.Common.Entities;
 
 namespace Testing
 {

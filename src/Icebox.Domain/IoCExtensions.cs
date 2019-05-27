@@ -1,5 +1,5 @@
 ﻿
-namespace Icebox.Domain
+namespace Icebox.Common
 {
     public static class IoC
     {

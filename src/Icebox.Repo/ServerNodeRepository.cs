@@ -4,11 +4,11 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Icebox.Domain.Entities;
+using Icebox.Common.Entities;
 
 using Icebox.Infrastructure;
 
-namespace Icebox.Core.Persistance
+namespace Icebox.Persistance
 {
     public class ServerNodeRepository : Db<ServerNode>, IRepository<ServerNode>
     {

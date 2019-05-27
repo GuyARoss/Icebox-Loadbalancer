@@ -2,10 +2,10 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-using Icebox.Domain.Entities;
-using Icebox.Core.Persistance;
+using Icebox.Common.Entities;
+using Icebox.Persistance;
 
-namespace IceBox.Web.Services
+namespace Icebox.Web.Services
 {
     public static class ServerNodes
     {

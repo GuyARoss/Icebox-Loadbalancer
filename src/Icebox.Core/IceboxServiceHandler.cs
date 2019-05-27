@@ -1,12 +1,16 @@
-﻿using Icebox.Domain;
-using Icebox.Domain.Entities;
+﻿using Icebox.Common;
+using Icebox.Common.Entities;
 
-using Icebox.Core.Persistance;
-using Icebox.Core.Persistance.Extensions;
+using Icebox.Infrastructure;
+
+using Icebox.Persistance;
+using Icebox.Persistance.Extensions;
+
+using Icebox.Core.LoadBalancing;
 
 namespace Icebox.Core
 {
-    public static class IceboxService
+    public static class IceboxServiceHandler
     {
         public static string Invoke(string requestedUrl)
         {
@@ -39,5 +43,6 @@ namespace Icebox.Core
             return new HttpProxy(url)
                 .GetResponse();
         }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Icebox.Domain.Entities
+﻿namespace Icebox.Common.Entities
 {
     public class ClusterModel
     {
