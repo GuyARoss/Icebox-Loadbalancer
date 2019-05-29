@@ -7,5 +7,6 @@
         public uint MaxSize { get; set; }
         public string Gateway { get; set; }
         public LoadDistributorType LoadDistributorType { get; set; }
+        public GatewayMethodType GatewayType { get; set; }
     }
 }
