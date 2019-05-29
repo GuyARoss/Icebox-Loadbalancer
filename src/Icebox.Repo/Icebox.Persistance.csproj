@@ -51,12 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClusterRepository.cs" />
+    <Compile Include="Repositories\ClusterRepository.cs" />
     <Compile Include="Extensions\CluserExtensions.cs" />
     <Compile Include="Extensions\ServerNodeExtensions.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerNodeRepository.cs" />
+    <Compile Include="Repositories\ServerNodeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
