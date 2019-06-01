@@ -13,7 +13,7 @@ namespace Testing
 
             rq.Create(new ClusterModel
             {
-                ClusterId = "123",
+                Id = "123",
                 Gateway ="11",
                 LoadDistributorType = 0,
                 MaxSize = 12,

@@ -46,11 +46,11 @@ namespace Icebox.Core
 
             var nodePool = IoC.Resolve<ServerNodeRepository>()
                 .FindAll()
-                .InPool(cluserId: cluster.ClusterId);
+                .InPool(cluserId: cluster.Id);
 
             ILoadDistributor loadDistributer = cluster.MapTypeToDistrubtor();
 
-            return new LoadBalancer(loadDistributer, nodePool, cluster.ClusterId)
+            return new LoadBalancer(loadDistributer, nodePool, cluster.Id)
                 .SelectInstanceFromPool();
         }
 

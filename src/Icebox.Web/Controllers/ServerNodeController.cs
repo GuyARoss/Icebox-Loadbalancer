@@ -7,7 +7,7 @@ using Icebox.Web.Services;
 
 namespace Icebox.Web.Controllers
 {
-    [Route("serverNodes")]
+    [Route("node")]
     [ApiController]
     public class ServerNodeController : ControllerBase
     {

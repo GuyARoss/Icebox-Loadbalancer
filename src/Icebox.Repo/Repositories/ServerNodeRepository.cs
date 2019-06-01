@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,18 +13,19 @@ namespace Icebox.Persistance
     {
         public override Dictionary<string, string> TableColumns => new Dictionary<string, string>
         {
-            { "Id", "int" },
-            { "Name", "text(45)" },
-            { "ClusterId", "text(95)" },
+            { "Id", "TEXT" },
+            { "Name", "TEXT" },
+            { "Address", "TEXT"},
+            { "ClusterId", "TEXT" },
         };
 
         public override string TableName =>"nodes";
 
         public Task Create(ServerNode entity)
         {
-            string sql = string.Format("INSERT INTO `{0}` (ClusterId, Name, Id) " +
-                "VALUES ('{1}', '{2}', '{3}')", TableName,
-                entity.ClusterId, entity.Name, entity.Id);
+            string sql = string.Format("INSERT INTO `{0}` (ClusterId, Name, Id, Address) " +
+                "VALUES ('{1}', '{2}', '{3}', '{4}')", TableName,
+                entity.ClusterId, entity.Name, entity.Id, entity.Address);
 
             return _executeNonQueryCommand(sql);
         }
@@ -61,8 +61,8 @@ namespace Icebox.Persistance
 
         public Task Update(ServerNode entity)
         {
-            string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}' WHERE" +
-                "Id = '{3}'", TableName, entity.ClusterId, entity.Name, entity.Id);
+            string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}', Address='{3}' WHERE" +
+                "Id = '{4}'", TableName, entity.ClusterId, entity.Name, entity.Address, entity.Id);
 
             return _executeNonQueryCommand(sql);
         }
@@ -71,9 +71,10 @@ namespace Icebox.Persistance
         {
             return new ServerNode
             {
-                ClusterId = (string)reader["ClusterId"],
-                Id = Convert.ToUInt32(reader["Id"]),
-                Name = (string)reader["Name"],
+                ClusterId = reader["ClusterId"] as string,
+                Id = reader["Id"] as string,
+                Name = reader["Name"] as string,
+                Address = reader["Address"] as string,
             };
         }
     }

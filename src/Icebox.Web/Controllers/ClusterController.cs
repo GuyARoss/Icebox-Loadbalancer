@@ -7,7 +7,7 @@ using Icebox.Services;
 
 namespace Icebox.Web.Controllers
 {
-    [Route("clusters")]
+    [Route("cluster")]
     [ApiController]
     public class ClusterController : ControllerBase
     {
