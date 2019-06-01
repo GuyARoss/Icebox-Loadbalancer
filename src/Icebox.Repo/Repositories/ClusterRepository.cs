@@ -21,14 +21,15 @@ namespace Icebox.Persistance
             { "MaxSize", "INTEGER" },
             { "Gateway", "TEXT" },
             { "LoadDistributorType", "INTEGER" },
-            { "GatewayType", "INTEGER" }
+            { "GatewayType", "INTEGER" },
+            { "ServiceId", "TEXT" }
         };
 
         public Task Create(ClusterModel entity)
         {
             string sql = string.Format("INSERT INTO `{0}` (Id, Name, MaxSize, Gateway, LoadDistributorType) " +
-                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}')", TableName, 
-                entity.Id, entity.Name, entity.MaxSize, entity.Gateway, (int)entity.LoadDistributorType);
+                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", TableName, 
+                entity.Id, entity.Name, entity.MaxSize, entity.Gateway, (int)entity.LoadDistributorType, entity.ServiceId);
 
             return _executeNonQueryCommand(sql);
         }
@@ -60,9 +61,9 @@ namespace Icebox.Persistance
         }      
         public Task Update(ClusterModel entity)
         {
-            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistrutorType='{2}', MaxSize='{3}', Name='{4}' WHERE" +
+            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistrutorType='{2}', MaxSize='{3}', Name='{4}', ServiceId='{5}' WHERE" +
                 "Id = '{5}'", TableName, entity.Gateway, entity.LoadDistributorType, entity.MaxSize, entity.Name, 
-                entity.Id);
+                entity.Id, entity.ServiceId);
 
             return _executeNonQueryCommand(sql);
         }
@@ -71,11 +72,12 @@ namespace Icebox.Persistance
         {
             return new ClusterModel
             {
-                Id = (string)reader["Id"],
-                Gateway = (string)reader["Gateway"],
+                Id = reader["Id"] as string,
+                Gateway = reader["Gateway"] as string,
                 LoadDistributorType = (LoadDistributorType)Convert.ToInt32(reader["LoadDistributorType"]),
                 MaxSize = Convert.ToUInt32(reader["MaxSize"]),
-                Name = (string)reader["Name"]
+                Name = reader["Name"] as string,
+                ServiceId = reader["ServiceId"] as string
             };
         }
     }
