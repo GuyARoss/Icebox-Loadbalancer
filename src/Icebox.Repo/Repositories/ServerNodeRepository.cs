@@ -17,6 +17,7 @@ namespace Icebox.Persistance
             { "Name", "TEXT" },
             { "Address", "TEXT"},
             { "ClusterId", "TEXT" },
+            { "ServiceId", "TEXT"}
         };
 
         public override string TableName =>"nodes";
@@ -24,8 +25,8 @@ namespace Icebox.Persistance
         public Task Create(ServerNode entity)
         {
             string sql = string.Format("INSERT INTO `{0}` (ClusterId, Name, Id, Address) " +
-                "VALUES ('{1}', '{2}', '{3}', '{4}')", TableName,
-                entity.ClusterId, entity.Name, entity.Id, entity.Address);
+                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}')", TableName,
+                entity.ClusterId, entity.Name, entity.Id, entity.Address, entity.ServiceId);
 
             return _executeNonQueryCommand(sql);
         }
@@ -62,7 +63,7 @@ namespace Icebox.Persistance
         public Task Update(ServerNode entity)
         {
             string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}', Address='{3}' WHERE" +
-                "Id = '{4}'", TableName, entity.ClusterId, entity.Name, entity.Address, entity.Id);
+                "Id='{4}', ServiceId='{5}'", TableName, entity.ClusterId, entity.Name, entity.Address, entity.Id, entity.ServiceId);
 
             return _executeNonQueryCommand(sql);
         }
@@ -75,6 +76,7 @@ namespace Icebox.Persistance
                 Id = reader["Id"] as string,
                 Name = reader["Name"] as string,
                 Address = reader["Address"] as string,
+                ServiceId = reader["ServiceId"] as string
             };
         }
     }
