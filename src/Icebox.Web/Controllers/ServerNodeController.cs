@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 using Icebox.Common.Entities;
-using Icebox.Web.Services;
+using Icebox.Services;
 
 namespace Icebox.Web.Controllers
 {
