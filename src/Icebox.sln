@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Testing\Example
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icebox.Common", "Icebox.Domain\Icebox.Common.csproj", "{1176CECE-0727-4E84-A858-2CF82C4DF5A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icebox.Service", "Icebox.Service\Icebox.Service.csproj", "{2DC44AD2-0827-4799-85A2-18FC0C9A60C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icebox.Services", "Icebox.Service\Icebox.Services.csproj", "{2DC44AD2-0827-4799-85A2-18FC0C9A60C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Icebox.Persistance", "Icebox.Repo\Icebox.Persistance.csproj", "{E8FAE233-99EE-43C8-8BBF-DDBCE0A952BF}"
 EndProject

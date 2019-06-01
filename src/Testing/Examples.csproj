@@ -87,9 +87,9 @@
       <Project>{e8fae233-99ee-43c8-8bbf-ddbce0a952bf}</Project>
       <Name>Icebox.Persistance</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Icebox.Service\Icebox.Service.csproj">
+    <ProjectReference Include="..\Icebox.Service\Icebox.Services.csproj">
       <Project>{2dc44ad2-0827-4799-85a2-18fc0c9a60c8}</Project>
-      <Name>Icebox.Service</Name>
+      <Name>Icebox.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

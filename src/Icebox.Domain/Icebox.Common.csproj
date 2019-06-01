@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Entities\ClusterModel.cs" />
     <Compile Include="Entities\ServerNode.cs" />
+    <Compile Include="Entities\ServiceModel.cs" />
     <Compile Include="GatewayMethodType.cs" />
     <Compile Include="ILoadDistributer.cs" />
     <Compile Include="IoCExtensions.cs" />

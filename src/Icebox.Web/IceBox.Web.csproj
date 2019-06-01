@@ -20,7 +20,7 @@
     <ProjectReference Include="..\Icebox.Core\Icebox.Core.csproj" />
     <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj" />
     <ProjectReference Include="..\Icebox.Repo\Icebox.Persistance.csproj" />
-    <ProjectReference Include="..\Icebox.Service\Icebox.Service.csproj" />
+    <ProjectReference Include="..\Icebox.Service\Icebox.Services.csproj" />
   </ItemGroup>
 
 </Project>
