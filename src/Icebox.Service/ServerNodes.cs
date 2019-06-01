@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Icebox.Common.Entities;
 using Icebox.Persistance;
 
-namespace Icebox.Web.Services
+namespace Icebox.Services
 {
     public static class ServerNodes
     {
