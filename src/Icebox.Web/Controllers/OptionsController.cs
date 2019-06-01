@@ -22,5 +22,16 @@ namespace Icebox.Web.Controllers
                 })
                 .ToList();
         }
+
+        public ActionResult<List<OptionModel<int>>> GatewayTypes()
+        {
+            return Clusters.GetGatewayTypes()
+                .Select(type => new OptionModel<int>
+                {
+                    Title = type.Key,
+                    Value = type.Value,
+                })
+                .ToList();
+        }
     }
 }

@@ -28,5 +28,17 @@ namespace Icebox.Services
 
             return typesDic;
         }
+
+        public static Dictionary<string, int> GetGatewayTypes()
+        {
+            var typesDic = new Dictionary<string, int>();
+
+            foreach (int value in Enum.GetValues(typeof(GatewayMethodType)))
+            {
+                typesDic.Add(Enum.GetName(typeof(GatewayMethodType), value), value);
+            }
+
+            return typesDic;
+        }
     }
 }
