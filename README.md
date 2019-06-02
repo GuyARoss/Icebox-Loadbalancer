@@ -16,8 +16,6 @@ Clone the package, open the main .sln within the src directory, import all requi
 ## Basic Usage
 For advanced usage, please refer to the wiki [here](https://github.com/GuyARoss/Icebox/wiki).
 
-__Overview Map__
-![Map](./.github/map01.png)
 
 ### Services
 Services describe a uniform service to maintain consistency between server nodes within clusters, as well as differentiating between cluster instances.
