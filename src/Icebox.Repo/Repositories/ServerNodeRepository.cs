@@ -60,6 +60,20 @@ namespace Icebox.Persistance
             return null;
         }
 
+        public IEnumerable<ServerNode> FindByClusterId(string clusterId)
+        {
+            string sql = string.Format("select * from `{0}` WHERE ClusterId='{1}'", TableName, clusterId);            
+
+            var clusterModels = _exectuteQueryCommand(sql, _mapReader);
+
+            if (clusterModels.Count() > 0)
+            {
+                return clusterModels;
+            }
+
+            return null;
+        }
+
         public Task Update(ServerNode entity)
         {
             string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}', Address='{3}' WHERE" +

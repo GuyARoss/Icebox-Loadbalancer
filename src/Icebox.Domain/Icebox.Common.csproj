@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esent.Collections">
-      <HintPath>..\Testing\bin\Debug\Esent.Collections.dll</HintPath>
+      <HintPath>..\Icebox\bin\Debug\Esent.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Esent.Interop">
-      <HintPath>..\Testing\bin\Debug\Esent.Interop.dll</HintPath>
+      <HintPath>..\Icebox\bin\Debug\Esent.Interop.dll</HintPath>
     </Reference>
     <Reference Include="Esent.Isam">
-      <HintPath>..\Testing\bin\Debug\Esent.Isam.dll</HintPath>
+      <HintPath>..\Icebox\bin\Debug\Esent.Isam.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
