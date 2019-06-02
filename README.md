@@ -27,10 +27,11 @@ A single server can have any amount of services, usage does not need to be known
 Service Registry is required for node & cluster usage.
 
 #### Service Model
-- __id__: uuid
-- __name__ : name of the service
-- __description__ : service description
-- __Example of service registry__
+- __Id__: uuid
+- __Name__ : name of the service
+- __Description__ : service description
+
+__Example of service registry__
 
 ```curl
 curl --request POST https://SERVER_URL_HERE/service/create 
@@ -41,12 +42,11 @@ curl --request POST https://SERVER_URL_HERE/service/create
 Nodes are individual servers running one service. Nodes can be run individually, but will omit them from gateway & load balancing services.
 
 #### Node Model
-- __id__: uuid
-- __name__ : name
-- __clusterId__: parent id of the cluster (null if blank)
-- __address__: http address of the node
-- __serviceId__: service id of service running on the node
-
+- __Id__: uuid
+- __Name__ : name
+- __Cluster Id__: parent id of the cluster (null if blank)
+- __Address__: http address of the node
+- __Service Id__: service id of service running on the node
 
 
 __Example of node registry__
