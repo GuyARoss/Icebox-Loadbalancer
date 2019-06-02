@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Icebox.Web.Middleware;
+
 namespace Icebox.Web
 {
     public class Startup
@@ -43,6 +45,7 @@ namespace Icebox.Web
 
             app.UseCors("AllOriginsCorsPolicy");
             app.UseHttpsRedirection();
+            app.UseMiddleware(typeof(ExceptionHandler));
             app.UseMvc();
         }
     }
