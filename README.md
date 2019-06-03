@@ -66,7 +66,7 @@ Clusters are pool's of nodes that run one single service. The cluster gets deter
 - __id__: uuid of the cluster
 - __Name__: Name of the cluster
 - __Max Size__: Max size of nodes in the cluster
-- __Gateway__: The initial gateway used to to access the cluster. 
+- __Gateway__: The initial gateway used to access the cluster. 
 - __Service Id__: Id of the service running on the cluster
 - __Load Distributor Type__: Distribution method used for load balancing the nodes. For all types, please refer to the wiki [here](https://github.com/GuyARoss/Icebox/wiki). (This type should be the integer value of the method)
 - __Gateway Type__: Gateway Type used in the gateway proxy process.
