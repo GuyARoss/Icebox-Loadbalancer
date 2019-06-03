@@ -98,7 +98,7 @@ Note in this example we have a pre-registered cluster with the gateway `/example
 ```curl
 curl https://SERVER_URL_HERE/gateway/example
 ```
-This is call the `/example` cluster, perform the load balancing & depending on what gateway type, either proxy or redirect the node request.
+This calls the `/example` cluster, perform the load balancing & depending on what gateway type, either proxy or redirect the node request.
 
 ## Contributing
 Feel free to contribute by opening a Pull Request or an issue thread.
