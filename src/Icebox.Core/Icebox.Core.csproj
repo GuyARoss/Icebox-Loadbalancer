@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Esent.Collections">
-      <HintPath>..\Icebox\bin\Debug\Esent.Collections.dll</HintPath>
+      <HintPath>..\..\dlls\Esent.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Esent.Interop">
-      <HintPath>..\Icebox\bin\Debug\Esent.Interop.dll</HintPath>
+      <HintPath>..\..\dlls\Esent.Interop.dll</HintPath>
     </Reference>
     <Reference Include="Esent.Isam">
-      <HintPath>..\Icebox\bin\Debug\Esent.Isam.dll</HintPath>
+      <HintPath>..\..\dlls\Esent.Isam.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,7 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
+    <ProjectReference Include="..\Icebox.Common\Icebox.Common.csproj">
       <Project>{1176cece-0727-4e84-a858-2cf82c4df5a5}</Project>
       <Name>Icebox.Common</Name>
     </ProjectReference>
@@ -66,7 +66,7 @@
       <Project>{2b8b5a27-47a2-4d4b-8b90-fde540967b12}</Project>
       <Name>Icebox.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Icebox.Repo\Icebox.Persistance.csproj">
+    <ProjectReference Include="..\Icebox.Persistence\Icebox.Persistence.csproj">
       <Project>{e8fae233-99ee-43c8-8bbf-ddbce0a952bf}</Project>
       <Name>Icebox.Persistance</Name>
     </ProjectReference>

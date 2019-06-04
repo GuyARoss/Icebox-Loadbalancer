@@ -69,7 +69,7 @@
     <Compile Include="Repositories\ServiceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Icebox.Domain\Icebox.Common.csproj">
+    <ProjectReference Include="..\Icebox.Common\Icebox.Common.csproj">
       <Project>{1176cece-0727-4e84-a858-2cf82c4df5a5}</Project>
       <Name>Icebox.Common</Name>
     </ProjectReference>

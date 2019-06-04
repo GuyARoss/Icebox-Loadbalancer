@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Icebox.Common;
 using Icebox.Common.Entities;
 
-
 namespace Icebox.Persistance.Extensions
 {
     public static class ClusterExtensions
