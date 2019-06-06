@@ -22,14 +22,15 @@ namespace Icebox.Persistance
             { "Gateway", "TEXT" },
             { "LoadDistributorType", "INTEGER" },
             { "GatewayType", "INTEGER" },
-            { "ServiceId", "TEXT" }
+            { "ServiceId", "TEXT" },
+            { "StatusType", "INTEGER"},
         };
 
         public Task Create(ClusterModel entity)
         {
-            string sql = string.Format("INSERT INTO `{0}` (Id, Name, MaxSize, Gateway, LoadDistributorType) " +
-                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", TableName, 
-                entity.Id, entity.Name, entity.MaxSize, entity.Gateway, (int)entity.LoadDistributorType, entity.ServiceId);
+            string sql = string.Format("INSERT INTO `{0}` (Id, Name, MaxSize, Gateway, LoadDistributorType, GatewayType, ServiceId, StatusType) " +
+                "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}')", TableName, 
+                entity.Id, entity.Name, entity.MaxSize, entity.Gateway, (int)entity.LoadDistributorType, entity.GatewayType, entity.ServiceId, entity.StatusType);
 
             return _executeNonQueryCommand(sql);
         }
@@ -61,9 +62,9 @@ namespace Icebox.Persistance
         }      
         public Task Update(ClusterModel entity)
         {
-            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistrutorType='{2}', MaxSize='{3}', Name='{4}', ServiceId='{5}' WHERE" +
-                "Id = '{5}'", TableName, entity.Gateway, entity.LoadDistributorType, entity.MaxSize, entity.Name, 
-                entity.Id, entity.ServiceId);
+            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistrutorType='{2}', MaxSize='{3}', Name='{4}', ServiceId='{5}', StatusType='{6}' WHERE" +
+                "Id = '{7}'", TableName, entity.Gateway, entity.LoadDistributorType, entity.MaxSize, entity.Name,
+                entity.ServiceId, entity.StatusType, entity.Id);
 
             return _executeNonQueryCommand(sql);
         }
@@ -77,7 +78,9 @@ namespace Icebox.Persistance
                 LoadDistributorType = (LoadDistributorType)Convert.ToInt32(reader["LoadDistributorType"]),
                 MaxSize = Convert.ToUInt32(reader["MaxSize"]),
                 Name = reader["Name"] as string,
-                ServiceId = reader["ServiceId"] as string
+                ServiceId = reader["ServiceId"] as string,
+                GatewayType = (GatewayMethodType)Convert.ToUInt32(reader["Gatewaytype"]),
+                StatusType =(StatusType)Convert.ToUInt32(reader["StatusType"])
             };
         }
     }
