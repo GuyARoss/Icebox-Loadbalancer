@@ -23,6 +23,7 @@ namespace Icebox.Web.Controllers
                 .ToList();
         }
 
+        [HttpGet("gatewayTypes")]
         public ActionResult<List<OptionModel<int>>> GatewayTypes()
         {
             return Clusters.GetGatewayTypes()
