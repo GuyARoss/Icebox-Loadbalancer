@@ -13,13 +13,16 @@ namespace Icebox.Services
         private static readonly ClusterRepository _clusterRepository = new ClusterRepository();
         private static readonly ServiceRepository _serviceRepo = new ServiceRepository();
 
-        public static Task AddServerNode(ServerNode model) // this process is too expensive.
+        public static Task AddServerNode(ServerNode model) // this process is too expensive...
         {
             var foundCluster = _clusterRepository.FindById(model.ClusterId);
-            int currentSize = _repo.FindByClusterId(model.ClusterId).Count();
+
+            var nodesByCluster = _repo.FindByClusterId(model.ClusterId);
+
+            int currentSize = model.ClusterId != null && nodesByCluster != null ? nodesByCluster.Count() : 0;
             var foundService = _serviceRepo.FindById(model.ServiceId);            
 
-            if (foundCluster != null && foundCluster.MaxSize > currentSize + 1)
+            if (foundCluster != null && foundCluster.MaxSize < currentSize)
             {
                 throw new System.Exception(string.Format("Max Size for Cluster Exceeded, Current Limit is {0}", foundCluster.MaxSize));
             } else if (foundService == null)
