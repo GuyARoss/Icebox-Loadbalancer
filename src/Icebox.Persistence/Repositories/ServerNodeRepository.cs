@@ -24,7 +24,7 @@ namespace Icebox.Persistance
 
         public Task Create(ServerNode entity)
         {
-            string sql = string.Format("INSERT INTO `{0}` (ClusterId, Name, Id, Address) " +
+            string sql = string.Format("INSERT INTO `{0}` (ClusterId, Name, Id, Address, ServiceId) " +
                 "VALUES ('{1}', '{2}', '{3}', '{4}', '{5}')", TableName,
                 entity.ClusterId, entity.Name, entity.Id, entity.Address, entity.ServiceId);
 
@@ -50,7 +50,7 @@ namespace Icebox.Persistance
             string sql = string.Format("select * from `{0}` WHERE Id='{1}'", TableName,
                 id);
 
-            var clusterModels = _exectuteQueryCommand(sql, _mapReader);
+            var clusterModels = _exectuteQueryCommand(sql, _mapReader); 
 
             if (clusterModels.Count() > 0)
             {
