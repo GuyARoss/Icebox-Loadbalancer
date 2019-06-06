@@ -9,5 +9,6 @@
         public string ServiceId { get; set; }
         public LoadDistributorType LoadDistributorType { get; set; }
         public GatewayMethodType GatewayType { get; set; }
+        public StatusType StatusType { get; set; }
     }
 }
