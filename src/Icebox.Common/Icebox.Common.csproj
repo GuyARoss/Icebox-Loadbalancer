@@ -58,6 +58,7 @@
     <Compile Include="ILoadDistributer.cs" />
     <Compile Include="IoCExtensions.cs" />
     <Compile Include="IServiceHandler.cs" />
+    <Compile Include="IStatusType.cs" />
     <Compile Include="LoadDistributorType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
