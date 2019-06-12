@@ -1,15 +1,16 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-using Microsoft.Isam.Esent.Collections.Generic;
 
 using Icebox.Common;
 using Icebox.Common.Entities;
+
+using Icebox.Infrastructure;
 
 namespace Icebox.Core.LoadBalancing.Distributors
 {
     public class RoundRobinDistribution : ILoadDistributor
     {        
-        public string Invoke(IEnumerable<ServerNode> nodes, PersistentDictionary<int, int> store)
+        public string Invoke(IEnumerable<ServerNode> nodes, PersistentDictionary<int> store)
         {           
             int currentId = store.Count == 0 ? 0 : store[0]; // is 0th index if store is empty.
 
