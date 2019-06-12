@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.Isam.Esent.Collections.Generic;
 
 using Icebox.Common;
 using Icebox.Common.Entities;
+using Icebox.Infrastructure;
 
 namespace Icebox.Core.LoadBalancing
 {
     public class LoadBalancer : IDisposable
-    {
+    {   
         public readonly ILoadDistributor Distributor;
         public readonly IEnumerable<ServerNode> NodePool;
 
-        private readonly PersistentDictionary<int, int> _persistedDictionary;
-
-        public LoadBalancer(ILoadDistributor distributor, IEnumerable<ServerNode> nodePool, string cluserId)
+        private readonly PersistentDictionary<int> _persistedDictionary;
+        
+        public LoadBalancer(ILoadDistributor distributor, IEnumerable<ServerNode> nodePool, string clusterId)
         {
             Distributor = distributor;
             NodePool = nodePool;
 
-            _persistedDictionary = new PersistentDictionary<int, int>(cluserId);
+            _persistedDictionary = new PersistentDictionary<int>(clusterId);            
         }
 
         public void Dispose()
