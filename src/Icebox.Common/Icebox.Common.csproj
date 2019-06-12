@@ -32,15 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Esent.Collections">
-      <HintPath>..\..\dlls\Esent.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Esent.Interop">
-      <HintPath>..\..\dlls\Esent.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="Esent.Isam">
-      <HintPath>..\..\dlls\Esent.Isam.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +52,12 @@
     <Compile Include="IStatusType.cs" />
     <Compile Include="LoadDistributorType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Icebox.Infrastructure\Icebox.Infrastructure.csproj">
+      <Project>{2b8b5a27-47a2-4d4b-8b90-fde540967b12}</Project>
+      <Name>Icebox.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

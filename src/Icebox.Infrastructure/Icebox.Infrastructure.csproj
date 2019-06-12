@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Db.cs" />
     <Compile Include="HttpProxy.cs" />
+    <Compile Include="PersistentDictionary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
