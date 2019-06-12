@@ -13,7 +13,8 @@ namespace Icebox.Web.Controllers
     {        
         public ActionResult<string> Invoke()
         {
-            string pathValue = HttpContext.Request.Path.Value;
+             string pathValue = HttpContext.Request.Path.Value.Replace("gateway/", "");
+
 
             Tuple<string, GatewayMethodType> resolvedHanlder = IceboxServiceHandler.Invoke(pathValue);
 
