@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 using Icebox.Common;
 using Icebox.Common.Entities;
@@ -46,12 +47,15 @@ namespace Icebox.Core
 
             var nodePool = IoC.Resolve<ServerNodeRepository>()
                 .FindAll()
-                .InPool(cluserId: cluster.Id);
+                .InPool(cluserId: cluster.Id)
+                .ToList();
 
             ILoadDistributor loadDistributer = cluster.MapTypeToDistrubtor();
 
-            return new LoadBalancer(loadDistributer, nodePool, cluster.Id)
-                .SelectInstanceFromPool();
+            using (var lb = new LoadBalancer(loadDistributer, nodePool, cluster.Id))
+            {
+                return lb.SelectInstanceFromPool();
+            }
         }
 
         private static string _routeToProxy(string url) // todo: only supports http
