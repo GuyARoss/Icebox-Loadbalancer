@@ -50,5 +50,10 @@ namespace Icebox.Services
 
             return typesDic;
         }
+
+        public static Task Update(ClusterModel model)
+        {
+            return _repo.Update(model);
+        }
     }
 }

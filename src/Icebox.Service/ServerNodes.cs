@@ -35,5 +35,6 @@ namespace Icebox.Services
         public static Task DeleteServerNode(ServerNode model) => _repo.Delete(model);
         public static ServerNode FindById(string id) => _repo.FindById(id);
         public static List<ServerNode> FindAll() => _repo.FindAll().ToList();
+        public static Task Update(ServerNode model) => _repo.Update(model);
     }
 }
