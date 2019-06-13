@@ -14,7 +14,7 @@ namespace Icebox.Web.Controllers
         [HttpPost("create")]
         public ActionResult<Task> CreateCluster([FromBody] ServerNode model) => ServerNodes.AddServerNode(model);
 
-        [HttpPost("destory")]
+        [HttpPost("destroy")]
         public ActionResult<Task> DeleteClusterNode([FromBody] ServerNode model) => ServerNodes.DeleteServerNode(model);
 
         [HttpGet("findById")]
@@ -22,5 +22,8 @@ namespace Icebox.Web.Controllers
 
         [HttpGet("findAll")]
         public ActionResult<List<ServerNode>> FindAll() => ServerNodes.FindAll();
+
+        [HttpPost("update")]
+        public ActionResult<Task> Update([FromBody] ServerNode model) => ServerNodes.Update(model); 
     }
 }

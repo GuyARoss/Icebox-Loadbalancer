@@ -23,5 +23,7 @@ namespace Icebox.Web.Controllers
         [HttpGet("findAll")]
         public ActionResult<List<ClusterModel>> FindAll() => Clusters.FindAll();
 
+        [HttpPost("update")]
+        public ActionResult<Task> Update([FromBody] ClusterModel model) => Clusters.Update(model);
     }
 }
