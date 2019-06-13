@@ -33,7 +33,7 @@ namespace Icebox.Persistance
 
         public Task Delete(ServerNode entity)
         {
-            string sql = string.Format("delete from `{0}` Id='{1}'", TableName, entity.Id);
+            string sql = string.Format("delete from `{0}` where Id='{1}'", TableName, entity.Id);
 
             return _executeNonQueryCommand(sql);
         }
@@ -76,7 +76,7 @@ namespace Icebox.Persistance
 
         public Task Update(ServerNode entity)
         {
-            string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}', Address='{3}' WHERE" +
+            string sql = string.Format("update `{0}` set ClusterId='{1}', Name='{2}', Address='{3}' WHERE " +
                 "Id='{4}', ServiceId='{5}'", TableName, entity.ClusterId, entity.Name, entity.Address, entity.Id, entity.ServiceId);
 
             return _executeNonQueryCommand(sql);

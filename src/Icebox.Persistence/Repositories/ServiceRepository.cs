@@ -28,7 +28,7 @@ namespace Icebox.Persistance
 
         public Task Delete(ServiceModel entity)
         {
-            string sql = string.Format("delete from `{0}` Id='{1}'", TableName, entity.Id);
+            string sql = string.Format("delete from `{0}` where Id='{1}'", TableName, entity.Id);
 
             return _executeNonQueryCommand(sql);
         }

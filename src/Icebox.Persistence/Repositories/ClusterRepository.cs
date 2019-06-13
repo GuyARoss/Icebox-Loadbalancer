@@ -62,8 +62,8 @@ namespace Icebox.Persistance
         }      
         public Task Update(ClusterModel entity)
         {
-            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistrutorType='{2}', MaxSize='{3}', Name='{4}', ServiceId='{5}', StatusType='{6}' WHERE" +
-                "Id = '{7}'", TableName, entity.Gateway, entity.LoadDistributorType, entity.MaxSize, entity.Name,
+            string sql = string.Format("update `{0}` set Gateway='{1}', LoadDistributorType='{2}', MaxSize='{3}', Name='{4}', ServiceId='{5}', StatusType='{6}' WHERE" +
+                " Id = '{7}'", TableName, entity.Gateway, entity.LoadDistributorType, entity.MaxSize, entity.Name,
                 entity.ServiceId, entity.StatusType, entity.Id);
 
             return _executeNonQueryCommand(sql);
