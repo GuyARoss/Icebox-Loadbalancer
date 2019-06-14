@@ -25,9 +25,11 @@ A single server can have any amount of services, usage does not need to be known
 Service Registry is required for node & cluster usage.
 
 #### Service Model
-- __Id__: uuid
-- __Name__ : name of the service
-- __Description__ : service description
+| Name | Type | Description | 
+| ---| ---- | --------- |
+| Id | string | uuid of the service |
+| Name | string | name of the service |
+| Description | string | service description |
 
 __Example of service registry__
 
@@ -40,11 +42,13 @@ curl --request POST https://SERVER_URL_HERE/service/create
 Nodes are individual servers running one service. Nodes can be run individually, but will omit them from gateway & load balancing services.
 
 #### Node Model
-- __Id__: uuid
-- __Name__ : name
-- __Cluster Id__: parent id of the cluster (null if blank)
-- __Address__: http address of the node
-- __Service Id__: service id of service running on the node
+| Name | Type | Description |
+| ---- | ---- | ----------  | 
+| Id | string | uuid of the node |
+| Name | string | name of the node |
+| cluster id | string | parent cluster id |
+| address | string | http address of the node |
+| service id | string | service id of service running on the node |
 
 
 __Example of node registry__
@@ -63,18 +67,21 @@ curl --request POST https://SERVER_URL_HERE/service/create
 Clusters are pool's of nodes that run one single service. The cluster gets determined from the gateway address, then balanced using the server nodes. 
 
 #### Cluster Model
-- __id__: uuid of the cluster
-- __Name__: Name of the cluster
-- __Max Size__: Max size of nodes in the cluster
-- __Gateway__: The initial gateway used to access the cluster. 
-- __Service Id__: Id of the service running on the cluster
-- __Load Distributor Type__: Distribution method used for load balancing the nodes. For all types, please refer to the wiki [here](https://github.com/GuyARoss/Icebox/wiki). (This type should be the integer value of the method)
-- __Gateway Type__: Gateway Type used in the gateway proxy process.
+| Name | Type | Description |
+| ----- | --- | ----------- |
+| Id | string | uuid of the cluster |
+| Name | string | name of the cluster |
+| Max Size | int | max size of nodes in the cluster| 
+| Service Id | string | id of the service running on the cluster |
+| Load Distributor Type | int | Distribution method used for load balancing the nodes
+| Gateway Type | int | Gateway Type used in the gateway resolution process |
 
 __Available Gateway Types__:
 - (0) Redirect: Redirect the traffic to the node url
 - (1) Proxy: Channel the traffic through the servers internal proxy 
 
+__Load Distributor Type__:
+- (0) [Round Robin](https://en.wikipedia.org/wiki/Round-robin_DNS)
 
 __Example of cluster registry__
 ```curl
@@ -91,7 +98,7 @@ curl --request POST https://SERVER_URL_HERE/service/create
 ```
 
 ### Accessing the Icebox Service
-To access the icebox service, use the `gateway`. 
+To access the icebox service, use the `gateway` endpoint. 
 
 __Example__
 Note in this example we have a pre-registered cluster with the gateway `/example`.
