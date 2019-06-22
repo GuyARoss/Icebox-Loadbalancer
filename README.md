@@ -1,4 +1,10 @@
-# Icebox
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://avatars3.githubusercontent.com/u/52111092?s=300&u=fc3293e316a0915e40ebab6b112aa89dfe1f4847&v=4"  alt="Icebox Logo"></a>
+</p>
+
+<h1 align="center">Icebox Server</h1>
+
 Icebox is load balancing web service that features a dynamic http gateway, reverse-proxy gateway handling, gateway redirection, customizable load distribution methods, and more.
 
 ![Version](https://img.shields.io/badge/Version-Pre%20Release-orange.svg)
