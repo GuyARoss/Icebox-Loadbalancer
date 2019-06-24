@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img src="https://avatars3.githubusercontent.com/u/52111092?s=300&u=fc3293e316a0915e40ebab6b112aa89dfe1f4847&v=4"  alt="Icebox Logo"></a>
+ <img src="https://avatars0.githubusercontent.com/u/52111092?s=400&u=446d1403153a3c51c09800b754bcfb7ed5f6668a&v=4"  alt="Icebox Logo"></a>
 </p>
 
 <h1 align="center">Icebox Server</h1>
