@@ -15,7 +15,7 @@ Icebox is load balancing web service that features a dynamic http gateway, rever
 To install, first download the latest release [here](https://github.com/GuyARoss/Icebox/releases). The source zip is a published version of icebox core web. So after it is extracted, just upload to an iis instance.
 
 ### Development
-Clone the package, open the main .sln within the src directory and develop. Please note Icebox makes use requires .NET framework 4.6.2 [found here](https://www.microsoft.com/en-us/download/details.aspx?id=53344).
+Clone the package, open the main .sln within the src directory and develop. 
 
 ------
 
